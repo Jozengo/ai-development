@@ -1,10 +1,6 @@
-import os
 from urllib.parse import quote_plus
-from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
-
-load_dotenv()
 
 # 密码处理（如果包含特殊字符）
 password = "hcol@2025"  # 请确认实际密码
@@ -23,6 +19,7 @@ engine = create_engine(
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
+
 
 def get_db():
     db = SessionLocal()

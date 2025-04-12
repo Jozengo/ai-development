@@ -4,7 +4,7 @@ from autogen_agentchat.agents import AssistantAgent
 from autogen_agentchat.base import TaskResult
 from autogen_agentchat.messages import ModelClientStreamingChunkEvent, TextMessage, ToolCallExecutionEvent
 
-from examples.llms import model_client
+from backends.examples.llms import model_client
 
 
 async def get_weather(city: str) -> str:
@@ -33,7 +33,7 @@ async def main():
         tools=[get_weather, web_search],
         model_client_stream=True
     )
-    # 流失调用
+    # 流式调用
     stream = agent.run_stream(task="今天的股市情况如何？")
     # 分解输出的内容，进行监控分析
     async for msg in stream:

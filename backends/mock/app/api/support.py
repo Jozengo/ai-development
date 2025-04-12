@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app import schemas
+from backends.mock.app import schemas
 
 router = APIRouter()
 

@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from app.database import get_db
-from app import models, schemas
+from backends.mock.app.database import get_db
+from backends.mock.app import models, schemas
 
 router = APIRouter()
 
